@@ -1,6 +1,6 @@
 
 
-# Todo Component exercise
+# To-do Component exercise
 
 1. Burger Menu / Navigation for mobile devices
 2. Upcoming events (use JSON file) and load in upcoming events list
@@ -15,4 +15,4 @@
 4. (Homework) Thumbnail image gallery to this page. When clicking on a thumbnail, display a large version of the clicked image. The add additional controls to the thumbnail to go to:
   a. Go to the next image
   b. Go back an image
-  c. Autoplay the gallery
+  c. Auto-play the gallery
