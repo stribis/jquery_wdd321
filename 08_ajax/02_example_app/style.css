@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 800px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  border: solid 1px black;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.card p{
+  font-weight: bolder;
+  text-align: center;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.avatar {
+  display: block;
+  margin: 0 auto;
+}
+
+.card hr {
+  margin-bottom: 1rem;
+}
