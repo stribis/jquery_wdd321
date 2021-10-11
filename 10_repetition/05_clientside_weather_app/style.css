@@ -60,3 +60,28 @@ body {
   background: rgb(93, 93, 255);
   border-radius: 50%;
 }
+
+
+.aqi-good{
+  background-color: #009966;
+}
+
+.aqi-moderate{
+  background-color: #ffde33;
+}
+
+.aqi-ufs{
+  background-color: #ff9933;
+}
+
+.aqi-unhealthy{
+  background-color: #cc0033;
+}
+
+.aqi-vu{
+  background-color: #660099;
+}
+
+.aqi-hazardous{
+  background-color: #7e0023;
+}
