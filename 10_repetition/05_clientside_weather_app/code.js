@@ -1,7 +1,9 @@
 
 getLocation ()
 
+
 const apiKey = '108c1179d5f49e7ba876cdd2b2e7f156'
+const aqiApiKey = '8a602c959fee444a88e80b91eda4dcbb9959d5e8'
 
 /**
  * @returns void
@@ -16,6 +18,7 @@ function getLocation () {
     navigator.geolocation.getCurrentPosition(function (position){
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&lang=de&appid=${apiKey}`
       getData (url)
+      getAQI(position.coords.latitude, position.coords.longitude)
     })
   } else {
     // Does not work
@@ -61,3 +64,16 @@ $('form').submit(function(e){
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=de&appid=${apiKey}`
   getData(url)
 })
+
+
+function getAQI (lat, lon) {
+  // console.log('lat: ', lat, ' lon: ', lon)
+  $.getJSON(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${aqiApiKey}`, function (data){
+    console.log(data)
+    if ( data.status != 'ok'){
+      console.error('Error Connecting to the AQI API: ', data.status)
+    } else {
+      $('.app-container').prepend(`<div class="aqi">${data.data.aqi}</div>`)
+    }
+  })
+}
