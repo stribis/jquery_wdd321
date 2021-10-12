@@ -85,3 +85,20 @@ body {
 .aqi-hazardous{
   background-color: #7e0023;
 }
+
+body.Clear {
+  background: rgb(122, 217, 255);
+}
+
+body.Clousds {
+  background: rgb(186, 203, 209);
+}
+
+
+body.Thunderstorm {
+  background: rgb(149, 149, 149);
+}
+
+body.Rain {
+  background: rgb(24, 38, 98);
+}

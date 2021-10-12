@@ -11,5 +11,4 @@ let completeName = function () {
 
 let country = {name, capital, completeName}
 
-
 console.log(country)

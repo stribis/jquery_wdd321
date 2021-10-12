@@ -19,7 +19,7 @@ function getLocation () {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&lang=en&appid=${apiKey}`
       getData (url)
       // Run the getAQI function to display the current AQI
-      getAQI(position.coords.latitude, position.coords.longitude)
+      // getAQI(position.coords.latitude, position.coords.longitude)
     })
   } else {
     // Does not work
@@ -56,6 +56,10 @@ function generateView (data) {
     <p>${data.name}, ${data.sys.country}</p>
     <p class="description">${data.weather[0].description}</p>
   </div>`
+  // Change the body class
+  $('body').attr('class', data.weather[0].main)
+  // Get AQI and insert in page
+  getAQI(data.coord.lat, data.coord.lon)
   $('.app-display').html(template)
 }
 
@@ -79,6 +83,7 @@ function getAQI (lat, lon) {
       console.error('Error Connecting to the AQI API: ', data.status)
     } else {	
       // Create AQI Element for website
+      $('.aqi').remove()
       if ( data.data.aqi < 51) {
         // AQI is good
         $('.app-container').prepend(`<div class="aqi aqi-good">${data.data.aqi}: GOOD</div>`)
